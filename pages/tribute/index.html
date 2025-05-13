@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Marie Curie Tribute Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <div class="particles"></div>
+    <div class="scientific-bg"></div>
+    <main id="main">
+        <header>
+            <h1 id="title">Marie Curie</h1>
+            <div class="subtitle">Pioneer of Radioactivity</div>
+            <div class="decoration">
+                <span class="atom"></span>
+                <span class="atom"></span>
+                <span class="atom"></span>
+            </div>
+        </header>
+
+        <div class="content-wrapper">
+            <figure id="img-div" class="portrait-container">
+                <div class="portrait-frame">
+                    <img
+                        id="image"
+                        src="assets/marie_curie"
+                        alt="Marie Curie portrait"
+                    />
+                    <div class="portrait-overlay"></div>
+                </div>
+                <figcaption id="img-caption">
+                    Marie Curie in 1920 — the first woman to win a Nobel Prize and the only
+                    person to win Nobel Prizes in two different sciences.
+                </figcaption>
+            </figure>
+
+            <section id="tribute-info">
+                <div class="info-card">
+                    <h2>Scientific Legacy</h2>
+                    <div class="card-decoration"></div>
+                    <p>
+                        Marie Curie (1867–1934) was a physicist and chemist who conducted pioneering research
+                        on radioactivity. She was the first woman to win a Nobel Prize, and the only person
+                        to ever win Nobel Prizes in two different scientific fields — Physics and Chemistry.
+                    </p>
+                </div>
+
+                <div class="timeline">
+                    <h2>Key Achievements</h2>
+                    <div class="timeline-item">
+                        <div class="year">1898</div>
+                        <div class="event">Discovered Polonium</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="year">1898</div>
+                        <div class="event">Discovered Radium</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="year">1903</div>
+                        <div class="event">Nobel Prize in Physics</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="year">1911</div>
+                        <div class="event">Nobel Prize in Chemistry</div>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <h2>Impact on Science</h2>
+                    <div class="card-decoration"></div>
+                    <p>
+                        Her discoveries of polonium and radium revolutionized science and medicine, and her
+                        efforts in World War I helped develop mobile X-ray units. Curie's relentless dedication
+                        to science opened doors for women in STEM and continues to inspire scientists around the world.
+                    </p>
+                </div>
+
+                <div class="interactive-elements">
+                    <div class="element-card" data-element="Po">
+                        <div class="element-symbol">Po</div>
+                        <h3>Polonium</h3>
+                        <p>Atomic Number: 84</p>
+                        <div class="element-details">Named after Marie's homeland, Poland</div>
+                    </div>
+                    <div class="element-card" data-element="Ra">
+                        <div class="element-symbol">Ra</div>
+                        <h3>Radium</h3>
+                        <p>Atomic Number: 88</p>
+                        <div class="element-details">Discovered in 1898</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <footer>
+            <a
+                id="tribute-link"
+                href="https://en.wikipedia.org/wiki/Marie_Curie"
+                target="_blank"
+                class="learn-more"
+            >
+                Learn more about Marie Curie on Wikipedia
+                <span class="arrow">→</span>
+            </a>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

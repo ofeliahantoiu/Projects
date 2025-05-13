@@ -153,10 +153,14 @@ h1::after {
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, auto);
     gap: 2rem;
     padding: 1rem;
     width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
 }
 
 .project-card {
@@ -172,6 +176,43 @@ h1::after {
     flex-direction: column;
     height: 100%;
     position: relative;
+}
+
+/* First card - spans 2 columns */
+.project-card:first-child {
+    grid-column: 1 / span 2;
+    grid-row: 1;
+}
+
+/* Second card - normal size */
+.project-card:nth-child(2) {
+    grid-column: 3;
+    grid-row: 1;
+}
+
+/* Third card - normal size */
+.project-card:nth-child(3) {
+    grid-column: 4;
+    grid-row: 1;
+}
+
+/* Fourth card - spans 2 columns */
+.project-card:last-child {
+    grid-column: 2 / span 2;
+    grid-row: 2;
+    margin-top: 0;
+    max-width: none;
+}
+
+/* Adjust image heights for different card sizes */
+.project-card:first-child .project-image,
+.project-card:last-child .project-image {
+    height: 250px;
+}
+
+.project-card:nth-child(2) .project-image,
+.project-card:nth-child(3) .project-image {
+    height: 200px;
 }
 
 .project-card::before {
@@ -197,6 +238,9 @@ h1::after {
     overflow: hidden;
     position: relative;
     background-color: var(--section-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .project-image::after {
@@ -215,6 +259,7 @@ h1::after {
     height: 100%;
     object-fit: cover;
     transition: transform 0.3s ease;
+    display: block;
 }
 
 .project-card:hover .project-image img {
@@ -271,6 +316,28 @@ h1::after {
     line-height: 1.6;
 }
 
+@media (max-width: 1000px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
+    .project-card:first-child,
+    .project-card:nth-child(2),
+    .project-card:nth-child(3),
+    .project-card:last-child {
+        grid-column: auto;
+        grid-row: auto;
+    }
+
+    .project-card:first-child .project-image,
+    .project-card:last-child .project-image,
+    .project-card:nth-child(2) .project-image,
+    .project-card:nth-child(3) .project-image {
+        height: 200px;
+    }
+}
+
 @media (max-width: 768px) {
     body {
         padding: 1rem;
@@ -294,7 +361,10 @@ h1::after {
         padding: 0 0.5rem;
     }
 
-    .project-image {
+    .project-card:first-child .project-image,
+    .project-card:last-child .project-image,
+    .project-card:nth-child(2) .project-image,
+    .project-card:nth-child(3) .project-image {
         height: 180px;
     }
 
