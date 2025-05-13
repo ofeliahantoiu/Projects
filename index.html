@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Web Design Projects</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Responsive Web Design Projects</h1>
+            <p class="subtitle">A collection of web development projects showcasing responsive design principles</p>
+        </header>
+
+        <div class="projects-grid">
+            <a href="Product Landing Page/index.html" class="project-card">
+                <div class="project-content">
+                    <h2 class="project-title">Product Landing Page</h2>
+                    <p class="project-description">A modern landing page showcasing a product with responsive design and interactive elements.</p>
+                </div>
+            </a>
+
+            <a href="Technical Documentation Page/index.html" class="project-card">
+                <div class="project-content">
+                    <h2 class="project-title">Technical Documentation</h2>
+                    <p class="project-description">A comprehensive technical documentation page with a responsive sidebar navigation.</p>
+                </div>
+            </a>
+
+            <a href="Tribute page/index.html" class="project-card">
+                <div class="project-content">
+                    <h2 class="project-title">Tribute Page</h2>
+                    <p class="project-description">A tribute page honoring a notable figure with a clean and elegant design.</p>
+                </div>
+            </a>
+
+            <a href="Survey form/index.html" class="project-card">
+                <div class="project-content">
+                    <h2 class="project-title">Survey Form</h2>
+                    <p class="project-description">An interactive survey form with various input types and responsive layout.</p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Check for saved theme preference or use system preference
+        const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+        const savedTheme = localStorage.getItem('theme');
+        
+        if (savedTheme === 'dark' || (!savedTheme && prefersDarkScheme.matches)) {
+            document.body.classList.add('dark-theme');
+        }
+
+        // Listen for system theme changes
+        prefersDarkScheme.addEventListener('change', (e) => {
+            if (!localStorage.getItem('theme')) {
+                document.body.classList.toggle('dark-theme', e.matches);
+            }
+        });
+    </script>
+</body>
+</html> 

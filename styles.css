@@ -1,0 +1,147 @@
+:root {
+    --bg: #F0F4EF;
+    --text: #344966;
+    --accent: #E6AACE;
+    --accent-hover: #0D1821;
+    --card-bg: #ffffff;
+    --nav-bg: #ffffff;
+    --section-bg: #eaeff5;
+    --border-color: #dcdfe3;
+}
+
+.dark-theme {
+    --bg: #0D1821;
+    --text: #F0F4EF;
+    --accent: #E6AACE;
+    --accent-hover: #FFDD4A;
+    --card-bg: #344966;
+    --nav-bg: #0D1821;
+    --section-bg: #1a2633;
+    --border-color: #344966;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    padding: 2rem;
+    scroll-behavior: smooth;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+header::before {
+    content: '✨';
+    position: absolute;
+    left: 20%;
+    top: 0;
+    font-size: 2rem;
+    color: var(--accent);
+}
+
+header::after {
+    content: '✨';
+    position: absolute;
+    right: 20%;
+    top: 0;
+    font-size: 2rem;
+    color: var(--accent);
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: var(--accent);
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: var(--text);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.project-card {
+    background: var(--card-bg);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+    border: 2px solid var(--border-color);
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    border-color: var(--accent);
+}
+
+.project-content {
+    padding: 1.5rem;
+    position: relative;
+}
+
+.project-content::before {
+    content: '💫';
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    font-size: 1.2rem;
+    opacity: 0.5;
+    color: var(--accent);
+}
+
+.project-title {
+    font-size: 1.5rem;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.project-description {
+    color: var(--text);
+    font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 1rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    header::before,
+    header::after {
+        display: none;
+    }
+} 
